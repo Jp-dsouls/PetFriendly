@@ -64,4 +64,17 @@ public class AdopcionModel {
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
+
+    @Override
+    public String toString() {
+        return "AdopcionModel{" +
+                "raza='" + raza + '\'' +
+                ", rangoEdad='" + rangoEdad + '\'' +
+                ", tamanio='" + tamanio + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", especialidad='" + especialidad + '\'' +
+                ", imagen='" + imagen + '\'' +
+                ", tipo=" + tipo +
+                '}';
+    }
 }

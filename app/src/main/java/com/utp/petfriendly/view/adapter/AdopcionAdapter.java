@@ -5,12 +5,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
 import com.utp.petfriendly.R;
 import com.utp.petfriendly.model.AdopcionModel;
 
@@ -46,6 +48,7 @@ public class AdopcionAdapter extends RecyclerView.Adapter<AdopcionAdapter.ViewHo
 
     public  void  setItemAdopcion(List<AdopcionModel> listaAdopcion){
         this.lista = listaAdopcion;
+        Log.e("xxx",""+lista.size());
         notifyDataSetChanged();
     }
 
@@ -59,10 +62,12 @@ public class AdopcionAdapter extends RecyclerView.Adapter<AdopcionAdapter.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView txtRaza, txtTamanio,txtRangoEdad,txtEspecialidad;
+        ImageView imgPet;
        // CardView cardView;
 
         public ViewHolder(@NonNull View view) {
             super(view);
+            imgPet =  view.findViewById(R.id.imgPet);
             txtRaza = view.findViewById(R.id.txtRaza);
             txtTamanio = view.findViewById(R.id.txtTamanio);
             txtRangoEdad = view.findViewById(R.id.txtRangoEdad);
@@ -75,6 +80,13 @@ public class AdopcionAdapter extends RecyclerView.Adapter<AdopcionAdapter.ViewHo
             txtTamanio.setText(item.getTamanio());
             txtRangoEdad.setText(item.getRangoEdad());
             txtEspecialidad.setText(item.getEspecialidad());
+            Log.e("iamge",""+item.getImagen());
+            if(item.getImagen() != null){
+                Log.e("iamge",""+item.getImagen());
+               Picasso.with(context).load(item.getImagen()).into(imgPet);
+               // Picasso.with(getRaza).load(notificacionModel.getUrlImagen()).into(image);
+              //  Picasso.get().load(item.getImagen()).into(imgPet);
+            }
         }
 
         @Override
