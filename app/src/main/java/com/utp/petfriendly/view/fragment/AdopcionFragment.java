@@ -1,5 +1,6 @@
 package com.utp.petfriendly.view.fragment;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,18 +34,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class AdopcionFragment extends Fragment {
+public class AdopcionFragment extends Fragment implements AdopcionAdapter.OnItemClickListener {
 
     private AdopcionAdapter adapter;
     private List<AdopcionModel> list;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayout;
     private AdopcionViewModel adopcionViewModel;
+    private FragmentManager fragmentManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -62,7 +65,7 @@ public class AdopcionFragment extends Fragment {
         linearLayout = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayout);
         list = new ArrayList<>();
-        adapter = new AdopcionAdapter(getContext());
+        adapter = new AdopcionAdapter(getContext(),this);
         recyclerView.setAdapter(adapter);
 
         obtenerAdopcion();
@@ -94,6 +97,36 @@ public class AdopcionFragment extends Fragment {
         }
     }
 
+    public void setFragment(Fragment fragment) {
+        if (null != fragment) {
+            fragmentManager = getActivity().getSupportFragmentManager();
+            boolean existFragment = false;
+            List<Fragment> fragments = fragmentManager.getFragments();
+            if (fragments != null) {
+                for (Fragment mFragment : fragments) {
+                    if (mFragment != null && mFragment.isVisible()) {
+                        if (mFragment.getClass().getName().equals(fragment.getClass().getSimpleName())) {
+                            existFragment = true;
+                        }
+                    }
+                }
+            }
+            if (!existFragment) {
+                fragmentManager
+                        .beginTransaction()
+                        .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+                        .replace(R.id.content_main, fragment)
+                        .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                        .addToBackStack(null).commit();
+            } else {
+                fragmentManager.beginTransaction().remove(fragment)
+                        .replace(R.id.content_main, fragment)
+                        .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                        .addToBackStack(null).commit();
+            }
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -102,5 +135,11 @@ public class AdopcionFragment extends Fragment {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdopcionModel item) {
+        Fragment fragment = new DetalleAdopcionFragment().newInstance(item);
+        setFragment(fragment);
     }
 }

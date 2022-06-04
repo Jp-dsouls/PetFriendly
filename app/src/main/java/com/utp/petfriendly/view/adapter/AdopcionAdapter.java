@@ -23,10 +23,11 @@ public class AdopcionAdapter extends RecyclerView.Adapter<AdopcionAdapter.ViewHo
 
     private Context context;
     private List<AdopcionModel> lista = new ArrayList<>();
-    private static ClickListener clickListener;
+    private  OnItemClickListener itemClickListener ;
 
-    public AdopcionAdapter(Context context) {
+    public AdopcionAdapter(Context context,  OnItemClickListener itemClickListener) {
         this.context = context;
+        this.itemClickListener = itemClickListener;
     }
 
     @NonNull
@@ -48,22 +49,22 @@ public class AdopcionAdapter extends RecyclerView.Adapter<AdopcionAdapter.ViewHo
 
     public  void  setItemAdopcion(List<AdopcionModel> listaAdopcion){
         this.lista = listaAdopcion;
-        Log.e("xxx",""+lista.size());
         notifyDataSetChanged();
     }
 
-    public interface ClickListener {
-        void onItemClick(int position, View v);
+    public interface OnItemClickListener {
+        void onItemClick(AdopcionModel item);
     }
 
-    public void setOnItemClickListener(ClickListener clickListener) {
-        AdopcionAdapter.clickListener = clickListener;
+
+    public AdopcionModel getObject(int position){
+        return lista.get(position);
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public  class ViewHolder extends RecyclerView.ViewHolder  {
         TextView txtRaza, txtTamanio,txtRangoEdad,txtEspecialidad;
         ImageView imgPet;
-       // CardView cardView;
+        CardView cardView;
 
         public ViewHolder(@NonNull View view) {
             super(view);
@@ -72,7 +73,7 @@ public class AdopcionAdapter extends RecyclerView.Adapter<AdopcionAdapter.ViewHo
             txtTamanio = view.findViewById(R.id.txtTamanio);
             txtRangoEdad = view.findViewById(R.id.txtRangoEdad);
             txtEspecialidad = view.findViewById(R.id.txtEspecialidad);
-           // cardView = view.findViewById(R.id.cardView);
+            cardView = view.findViewById(R.id.cardView);
         }
 
         public void bind(Context context, AdopcionModel item) {
@@ -80,18 +81,17 @@ public class AdopcionAdapter extends RecyclerView.Adapter<AdopcionAdapter.ViewHo
             txtTamanio.setText(item.getTamanio());
             txtRangoEdad.setText(item.getRangoEdad());
             txtEspecialidad.setText(item.getEspecialidad());
-            Log.e("iamge",""+item.getImagen());
             if(item.getImagen() != null){
-                Log.e("iamge",""+item.getImagen());
                Picasso.with(context).load(item.getImagen()).into(imgPet);
-               // Picasso.with(getRaza).load(notificacionModel.getUrlImagen()).into(image);
-              //  Picasso.get().load(item.getImagen()).into(imgPet);
             }
+
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    itemClickListener.onItemClick(item);
+                }
+            });
         }
 
-        @Override
-        public void onClick(View view) {
-            clickListener.onItemClick(getAdapterPosition(), view);
-        }
     }
 }

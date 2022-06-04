@@ -1,6 +1,8 @@
 package com.utp.petfriendly.model;
 
-public class AdopcionModel {
+import java.io.Serializable;
+
+public class AdopcionModel implements Serializable {
     String raza;
     String rangoEdad;
     String tamanio;

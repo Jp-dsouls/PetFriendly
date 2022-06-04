@@ -11,4 +11,9 @@
     <color name="colorVerde">#6BA4A6</color>
     <color name="colorMarron">#443A18</color>
     <color name="gris">#BCBCBC</color>
+    <color name="transperent">#00000000</color>
+    <color name="colorAmarillo">#FFD974</color>
+    <color name="colorNaranja">#F8A65F</color>
+    <color name="colorRosa">#FFACAF</color>
+    <color name="colorPurputa">#BEBDFF</color>
 </resources>
