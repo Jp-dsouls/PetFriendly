@@ -46,7 +46,7 @@ public class WelcomeActivity extends AppCompatActivity {
         });
 
         database = FirebaseDatabase.getInstance();
-       crearAdopcion();
+      // crearAdopcion();
        // obtenerAdopcionFireBase();
         //crearAdopcion();
     }
