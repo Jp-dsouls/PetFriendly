@@ -22,7 +22,7 @@ public class HomeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private LinearLayout lnlTienda;
+    private LinearLayout lnlTienda,lnlDog,lnlRabbit,lnlBird,lnlCat;
     private AppCompatImageView appCompatImageView;
     private FragmentManager fragmentManager;
     private static final String ARG_PARAM1 = "param1";
@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         lnlTienda = view.findViewById(R.id.lnlTienda);
         appCompatImageView = view.findViewById(R.id.appCompatImageView);
-
+        lnlDog = view.findViewById(R.id.lnlDog);
         appCompatImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,6 +80,35 @@ public class HomeFragment extends Fragment {
                 setFragment(new TiendaFragment());
             }
         });
+
+        lnlDog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setFragment(new TiendaFragment().newInstance(1));
+            }
+        });
+
+        lnlCat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setFragment(new TiendaFragment().newInstance(2));
+            }
+        });
+
+        lnlBird.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setFragment(new TiendaFragment().newInstance(3));
+            }
+        });
+
+        lnlRabbit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setFragment(new TiendaFragment().newInstance(4));
+            }
+        });
+
     }
 
     public void setFragment(Fragment fragment) {

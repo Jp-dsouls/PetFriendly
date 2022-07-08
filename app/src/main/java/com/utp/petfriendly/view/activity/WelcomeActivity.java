@@ -46,7 +46,7 @@ public class WelcomeActivity extends AppCompatActivity {
         });
 
         database = FirebaseDatabase.getInstance();
-      // crearAdopcion();
+       crearAdopcion();
        // obtenerAdopcionFireBase();
         //crearAdopcion();
     }
@@ -83,6 +83,7 @@ public class WelcomeActivity extends AppCompatActivity {
         adopcionModel1.setNombreProducto("Alimento Cat Chow para Gatos Esterilizados 6 Kg");
         adopcionModel1.setCantidad("100");
         adopcionModel1.setPrecio("116.70");
+        adopcionModel1.setCategoria(1);
         adopcionModel1.setImagen("https://firebasestorage.googleapis.com/v0/b/petfriendly-cf1bf.appspot.com/o/catchow-3.jpg?alt=media&token=b51dc2ac-3ca6-4d4e-8494-597713ca7b95");
         reference.child(uuid1.toString()).setValue(adopcionModel1);
 
@@ -91,6 +92,7 @@ public class WelcomeActivity extends AppCompatActivity {
         adopcionModel2.setNombreProducto("Cama Hipoalergénica Cueva");
         adopcionModel2.setCantidad("100");
         adopcionModel2.setPrecio("139.00");
+        adopcionModel2.setCategoria(1);
         adopcionModel2.setImagen("https://firebasestorage.googleapis.com/v0/b/petfriendly-cf1bf.appspot.com/o/Cueva-1-1-937x937.png?alt=media&token=67699ecb-fd4b-46af-976d-4547dc33e441");
         reference.child(uuid2.toString()).setValue(adopcionModel2);
 
@@ -100,6 +102,7 @@ public class WelcomeActivity extends AppCompatActivity {
         adopcionModel3.setNombreProducto("Acondicionador pelo grande");
         adopcionModel3.setCantidad("100");
         adopcionModel3.setPrecio("36.90");
+        adopcionModel3.setCategoria(2);
         adopcionModel3.setImagen("https://canicat.pe/wp-content/uploads/2022/03/grooming-41.jpg");
         reference.child(uuid3.toString()).setValue(adopcionModel3);
 
@@ -108,6 +111,7 @@ public class WelcomeActivity extends AppCompatActivity {
         adopcionModel4.setNombreProducto("Shampoo Baño seco en espuma Gatos");
         adopcionModel4.setCantidad("100");
         adopcionModel4.setPrecio("29.90");
+        adopcionModel4.setCategoria(3);
         adopcionModel4.setImagen("https://canicat.pe/wp-content/uploads/2022/03/grooming-30.jpg");
         reference.child(uuid4.toString()).setValue(adopcionModel4);
 
@@ -116,10 +120,9 @@ public class WelcomeActivity extends AppCompatActivity {
         adopcionModel5.setNombreProducto("Bandana Escocés Can");
         adopcionModel5.setCantidad("100");
         adopcionModel5.setPrecio("9.90");
+        adopcionModel5.setCategoria(4);
         adopcionModel5.setImagen("https://canicat.pe/wp-content/uploads/2020/12/ROJO-BANDA-2.png");
         reference.child(uuid5.toString()).setValue(adopcionModel5);
     }
-
-
 
 }

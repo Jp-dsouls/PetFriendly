@@ -7,6 +7,7 @@ public class TiendaModel implements Serializable {
     String precio;
     String cantidad;
     String imagen;
+    Integer categoria;
 
     public String getNombreProducto() {
         return nombreProducto;
@@ -38,5 +39,13 @@ public class TiendaModel implements Serializable {
 
     public void setImagen(String imagen) {
         this.imagen = imagen;
+    }
+
+    public Integer getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Integer categoria) {
+        this.categoria = categoria;
     }
 }

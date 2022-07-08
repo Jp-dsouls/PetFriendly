@@ -43,11 +43,23 @@ public class TiendaFragment extends Fragment implements TiendaAdapter.OnItemClic
     private LinearLayoutManager linearLayout;
     private TiendaViewModel viewModel;
     private FragmentManager fragmentManager;
+    private Integer categoria;
+
+
+    public static TiendaFragment newInstance(Integer categoria) {
+        TiendaFragment fragment = new TiendaFragment();
+        Bundle args = new Bundle();
+        args.putInt("categoria", categoria);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        if (getArguments() != null)
+            categoria = getArguments().getInt("categoria");
     }
 
     @Override
@@ -67,18 +79,28 @@ public class TiendaFragment extends Fragment implements TiendaAdapter.OnItemClic
         linearLayout = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayout);
         list = new ArrayList<>();
-        adapter = new TiendaAdapter(getContext(),this);
+        adapter = new TiendaAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);
 
         obtenerTienda();
     }
 
-    private void obtenerTienda(){
+    private void obtenerTienda() {
         viewModel.obtenerTiendas().observe(getActivity(), new Observer<List<TiendaModel>>() {
             @Override
             public void onChanged(List<TiendaModel> adopcionModels) {
-                if(!adopcionModels.isEmpty()){
-                    adapter.setItemProduct(adopcionModels);
+                if (!adopcionModels.isEmpty()) {
+                    if (categoria != null) {
+                        List<TiendaModel> listProductFilter = new ArrayList<>();
+                        for (TiendaModel item : adopcionModels) {
+                            if (item.getCategoria() == categoria) {
+                                listProductFilter.add(item);
+                                adapter.setItemProduct(listProductFilter);
+                            }
+                        }
+                    } else {
+                        adapter.setItemProduct(adopcionModels);
+                    }
                 }
             }
         });
@@ -100,8 +122,8 @@ public class TiendaFragment extends Fragment implements TiendaAdapter.OnItemClic
 
     @Override
     public void onItemClick(TiendaModel item) {
-      //  Fragment fragment = new DetalleAdopcionFragment().newInstance(item);
-       // setFragment(fragment);
+        //  Fragment fragment = new DetalleAdopcionFragment().newInstance(item);
+        // setFragment(fragment);
     }
 
     @Override
