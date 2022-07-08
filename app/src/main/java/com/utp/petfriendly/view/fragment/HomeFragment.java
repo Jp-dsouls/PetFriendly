@@ -67,6 +67,9 @@ public class HomeFragment extends Fragment {
         lnlTienda = view.findViewById(R.id.lnlTienda);
         appCompatImageView = view.findViewById(R.id.appCompatImageView);
         lnlDog = view.findViewById(R.id.lnlDog);
+        lnlCat = view.findViewById(R.id.lnlCat);
+        lnlBird = view.findViewById(R.id.lnlBird);
+        lnlRabbit = view.findViewById(R.id.lnlRabbit);
         appCompatImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
