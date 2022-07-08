@@ -53,9 +53,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kawakmedium"
-                android:text="S/ 250.00"
                 android:textColor="@color/black"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

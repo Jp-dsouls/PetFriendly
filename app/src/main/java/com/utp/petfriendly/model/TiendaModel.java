@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class TiendaModel implements Serializable {
     String nombreProducto;
-    Double precio;
-    Integer cantidad;
+    String precio;
+    String cantidad;
     String imagen;
 
     public String getNombreProducto() {
@@ -16,19 +16,19 @@ public class TiendaModel implements Serializable {
         this.nombreProducto = nombreProducto;
     }
 
-    public Double getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Double precio) {
+    public void setPrecio(String precio) {
         this.precio = precio;
     }
 
-    public Integer getCantidad() {
+    public String getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(Integer cantidad) {
+    public void setCantidad(String cantidad) {
         this.cantidad = cantidad;
     }
 

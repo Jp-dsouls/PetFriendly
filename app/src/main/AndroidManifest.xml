@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetFriendly">
         <activity
+            android:name=".RegisterUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activity.LoginActivity"
             android:exported="false" />
         <activity

@@ -1,6 +1,7 @@
 package com.utp.petfriendly.view.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,7 +72,8 @@ public class TiendaAdapter extends RecyclerView.Adapter<TiendaAdapter.ViewHolder
 
         public void bind(Context context, TiendaModel item) {
             txtNameProduct.setText(item.getNombreProducto());
-            txtPrice.setText("S/ " + item.getPrecio());
+            Log.e("PRECIO",""+item.getPrecio());
+            txtPrice.setText("S/ "+item.getPrecio());
             if (item.getImagen() != null) {
                 Picasso.with(context).load(item.getImagen()).into(imgProduct);
             }

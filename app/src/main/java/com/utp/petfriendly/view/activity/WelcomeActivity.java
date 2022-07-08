@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.utp.petfriendly.R;
 import com.utp.petfriendly.model.AdopcionModel;
+import com.utp.petfriendly.model.TiendaModel;
 import com.utp.petfriendly.util.Constante;
 import com.utp.petfriendly.viewModel.AdopcionViewModel;
 
@@ -45,7 +46,7 @@ public class WelcomeActivity extends AppCompatActivity {
         });
 
         database = FirebaseDatabase.getInstance();
-       // obtenerAdopcion();
+      // crearAdopcion();
        // obtenerAdopcionFireBase();
         //crearAdopcion();
     }
@@ -75,61 +76,47 @@ public class WelcomeActivity extends AppCompatActivity {
 
     //TEST CREAR DATA EN FIREBASE
     private void crearAdopcion(){
-        DatabaseReference reference = database.getReference("adopcion");
-        UUID uuid1 = UUID.randomUUID();
+        DatabaseReference reference = database.getReference("productos");
 
-        AdopcionModel adopcionModel1 = new AdopcionModel();
-        adopcionModel1.setRaza("Dálmata");
-        adopcionModel1.setDescripcion("El dálmata es una raza canina que debe su nombre a la histórica región de Dalmacia. Su característica principal es su singular pelaje moteado de color negro, hígado o limón. Al nacer, las crías carecen de manchas, las cuales van apareciendo por todo su cuerpo durante el primer año de vida");
-        adopcionModel1.setEspecialidad("Juguetón, Amigable");
-        adopcionModel1.setRangoEdad("10-13 años");
-        adopcionModel1.setTamanio("10-14 Lbs");
-        adopcionModel1.setImagen("");
-        adopcionModel1.setTipo(1);
+        UUID uuid1 = UUID.randomUUID();
+        TiendaModel adopcionModel1 = new TiendaModel();
+        adopcionModel1.setNombreProducto("Alimento Cat Chow para Gatos Esterilizados 6 Kg");
+        adopcionModel1.setCantidad("100");
+        adopcionModel1.setPrecio("116.70");
+        adopcionModel1.setImagen("https://firebasestorage.googleapis.com/v0/b/petfriendly-cf1bf.appspot.com/o/catchow-3.jpg?alt=media&token=b51dc2ac-3ca6-4d4e-8494-597713ca7b95");
         reference.child(uuid1.toString()).setValue(adopcionModel1);
 
         UUID uuid2 = UUID.randomUUID();
-        AdopcionModel adopcionModel2 = new AdopcionModel();
-        adopcionModel2.setRaza("Chihuahua");
-        adopcionModel2.setDescripcion("El dálmata es una raza canina que debe su nombre a la histórica región de Dalmacia. Su característica principal es su singular pelaje moteado de color negro, hígado o limón. Al nacer, las crías carecen de manchas, las cuales van apareciendo por todo su cuerpo durante el primer año de vida");
-        adopcionModel2.setEspecialidad("Juguetón, Amigable");
-        adopcionModel2.setRangoEdad("10-13 años");
-        adopcionModel2.setTamanio("10-14 Lbs");
-        adopcionModel2.setImagen("");
-        adopcionModel2.setTipo(1);
+        TiendaModel adopcionModel2 = new TiendaModel();
+        adopcionModel2.setNombreProducto("Cama Hipoalergénica Cueva");
+        adopcionModel2.setCantidad("100");
+        adopcionModel2.setPrecio("139.00");
+        adopcionModel2.setImagen("https://firebasestorage.googleapis.com/v0/b/petfriendly-cf1bf.appspot.com/o/Cueva-1-1-937x937.png?alt=media&token=67699ecb-fd4b-46af-976d-4547dc33e441");
         reference.child(uuid2.toString()).setValue(adopcionModel2);
 
         UUID uuid3 = UUID.randomUUID();
-        AdopcionModel adopcionModel3 = new AdopcionModel();
-        adopcionModel3.setRaza("Pitbull");
-        adopcionModel3.setDescripcion("El dálmata es una raza canina que debe su nombre a la histórica región de Dalmacia. Su característica principal es su singular pelaje moteado de color negro, hígado o limón. Al nacer, las crías carecen de manchas, las cuales van apareciendo por todo su cuerpo durante el primer año de vida");
-        adopcionModel3.setEspecialidad("Juguetón, Amigable");
-        adopcionModel3.setRangoEdad("10-13 años");
-        adopcionModel3.setTamanio("10-14 Lbs");
-        adopcionModel3.setImagen("");
-        adopcionModel3.setTipo(1);
+
+        TiendaModel adopcionModel3 = new TiendaModel();
+        adopcionModel3.setNombreProducto("Acondicionador pelo grande");
+        adopcionModel3.setCantidad("100");
+        adopcionModel3.setPrecio("36.90");
+        adopcionModel3.setImagen("https://canicat.pe/wp-content/uploads/2022/03/grooming-41.jpg");
         reference.child(uuid3.toString()).setValue(adopcionModel3);
 
         UUID uuid4 = UUID.randomUUID();
-        AdopcionModel adopcionModel4 = new AdopcionModel();
-        adopcionModel4.setRaza("Russell Terrier");
-        adopcionModel4.setDescripcion("El dálmata es una raza canina que debe su nombre a la histórica región de Dalmacia. Su característica principal es su singular pelaje moteado de color negro, hígado o limón. Al nacer, las crías carecen de manchas, las cuales van apareciendo por todo su cuerpo durante el primer año de vida");
-        adopcionModel4.setEspecialidad("Juguetón, Amigable");
-        adopcionModel4.setRangoEdad("10-13 años");
-        adopcionModel4.setTamanio("10-14 Lbs");
-        adopcionModel4.setImagen("");
-        adopcionModel4.setTipo(1);
+        TiendaModel adopcionModel4 = new TiendaModel();
+        adopcionModel4.setNombreProducto("Shampoo Baño seco en espuma Gatos");
+        adopcionModel4.setCantidad("100");
+        adopcionModel4.setPrecio("29.90");
+        adopcionModel4.setImagen("https://canicat.pe/wp-content/uploads/2022/03/grooming-30.jpg");
         reference.child(uuid4.toString()).setValue(adopcionModel4);
 
         UUID uuid5 = UUID.randomUUID();
-        AdopcionModel adopcionModel5 = new AdopcionModel();
-        adopcionModel5.setRaza("Golden Retriever");
-        adopcionModel5.setDescripcion("El dálmata es una raza canina que debe su nombre a la histórica región de Dalmacia. Su característica principal es su singular pelaje moteado de color negro, hígado o limón. Al nacer, las crías carecen de manchas, las cuales van apareciendo por todo su cuerpo durante el primer año de vida");
-        adopcionModel5.setEspecialidad("Juguetón, Amigable");
-        adopcionModel5.setRangoEdad("10-13 años");
-        adopcionModel5.setTamanio("10-14 Lbs");
-        adopcionModel5.setImagen("");
-        adopcionModel5.setTipo(1);
+        TiendaModel adopcionModel5 = new TiendaModel();
+        adopcionModel5.setNombreProducto("Bandana Escocés Can");
+        adopcionModel5.setCantidad("100");
+        adopcionModel5.setPrecio("9.90");
+        adopcionModel5.setImagen("https://canicat.pe/wp-content/uploads/2020/12/ROJO-BANDA-2.png");
         reference.child(uuid5.toString()).setValue(adopcionModel5);
     }
 

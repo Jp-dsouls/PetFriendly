@@ -29,9 +29,8 @@ tools:context=".view.fragment.TiendaFragment">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:fontFamily="@font/kawakbold"
-        android:text="Tienda"
+        android:text="Producto"
         android:textColor="@color/black"
         android:textSize="24sp" />
 

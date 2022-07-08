@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -37,19 +38,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         txtRegister.setOnClickListener(this);
     }
 
-
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnLogin:
-                Log.e("LOGIN","debe  ingresar al login");
-                //casa
+                Intent myIntent = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(myIntent);
             case R.id.txtRestPassword:
                 Log.e("REST","reset password");
                 //casa
             case R.id.txtRegister:
-                Log.e("REGISTRO","reset password");
+                Intent itentResgister = new Intent(LoginActivity.this, RegisterUserActivity.class);
+                startActivity(itentResgister);
         }
     }
 }

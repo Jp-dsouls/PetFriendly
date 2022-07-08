@@ -82,7 +82,6 @@ public class AdopcionFragment extends Fragment implements AdopcionAdapter.OnItem
         });
     }
 
-
     private void setToolbar(View view) {
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
