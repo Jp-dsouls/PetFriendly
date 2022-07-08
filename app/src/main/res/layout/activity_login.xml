@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="16dp"
+    android:background="@mipmap/background"
+    tools:context=".view.activity.LoginActivity">
+
+    <ImageView
+        android:src="@mipmap/img_logo"
+        android:layout_width="250dp"
+        android:layout_height="100dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputUsuario"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Usuario">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTint="@color/color_gris"
+            android:fontFamily="@font/kawakregular"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+
+            android:textSize="13sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputClave"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Contraseña"
+        app:endIconDrawable="@drawable/show_password_selector"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/kawakregular"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textSize="13sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txtRestPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/kawakmedium"
+        android:gravity="right"
+        android:padding="4dp"
+        android:textColor="@color/color_blue"
+        android:text="¿Olvidaste tu contraseña?"
+        android:textSize="12sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_round_red"
+        android:backgroundTint="@color/colorAmarillo"
+        android:fontFamily="@font/kawakmedium"
+        android:text="Ingresar"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/txtRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/kawakmedium"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textColor="@color/color_blue"
+        android:text="¿Eres nuevo usuario? REGISTRATE"
+        android:textSize="12sp" />
+
+</LinearLayout>

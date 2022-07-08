@@ -46,9 +46,8 @@ public class DetalleAdopcionFragment extends Fragment  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-        if (getArguments() != null) {
+        if (getArguments() != null)
             adopcionModel = (AdopcionModel)  getArguments().getSerializable("adopcionModel");
-        }
     }
 
     @Override
