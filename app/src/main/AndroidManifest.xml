@@ -10,11 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetFriendly">
         <activity
+            android:name=".view.activity.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activity.AdopcionActivity"
             android:exported="true" />
         <activity
             android:name=".view.activity.HomeActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".view.activity.WelcomeActivity"
             android:exported="true">

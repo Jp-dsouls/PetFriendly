@@ -118,7 +118,7 @@ tools:context=".view.fragment.DetalleAdopcionFragment">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/kawakmedium"
-                    android:text="55-80 Lbs"
+                    android:text="12-15 años"
                     android:textColor="@color/gris" />
 
             </LinearLayout>
