@@ -244,6 +244,7 @@
         android:textColor="@color/black"
         android:textSize="12sp" />
   <LinearLayout
+      android:id="@+id/lnlVeterinaria"
       android:gravity="center"
       android:padding="16dp"
       android:orientation="horizontal"

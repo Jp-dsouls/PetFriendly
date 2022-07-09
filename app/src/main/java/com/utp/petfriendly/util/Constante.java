@@ -6,4 +6,5 @@ public class Constante {
         public static final String APP_DIRECTORY = "notificacion";
         public static final String TABLA_ADOPCION = "adopcion";
         public static final String TABLA_TIENDA = "productos";
+        public static final String TABLA_VETERINARIA = "veterinaria";
 }
