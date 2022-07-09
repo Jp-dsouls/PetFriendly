@@ -40,7 +40,7 @@ public class WelcomeActivity extends AppCompatActivity {
         cardStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(WelcomeActivity.this, HomeActivity.class);
+                Intent myIntent = new Intent(WelcomeActivity.this, LoginActivity.class);
                 startActivity(myIntent);
             }
         });
