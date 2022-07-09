@@ -22,7 +22,7 @@ public class HomeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private LinearLayout lnlTienda,lnlDog,lnlRabbit,lnlBird,lnlCat, lnlVeterinaria;
+    private LinearLayout lnlTienda, lnlDog, lnlRabbit, lnlBird, lnlCat, lnlVeterinaria, lnlCampania;
     private AppCompatImageView appCompatImageView;
     private FragmentManager fragmentManager;
     private static final String ARG_PARAM1 = "param1";
@@ -64,8 +64,10 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        lnlCampania = view.findViewById(R.id.lnlCampania);
         lnlTienda = view.findViewById(R.id.lnlTienda);
-        lnlVeterinaria=view.findViewById(R.id.lnlVeterinaria);
+        lnlVeterinaria = view.findViewById(R.id.lnlVeterinaria);
         appCompatImageView = view.findViewById(R.id.appCompatImageView);
         lnlDog = view.findViewById(R.id.lnlDog);
         lnlCat = view.findViewById(R.id.lnlCat);
@@ -119,6 +121,14 @@ public class HomeFragment extends Fragment {
                 setFragment(new TiendaFragment().newInstance(4));
             }
         });
+
+        lnlCampania.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setFragment(new CampaniaFragment());
+            }
+        });
+
 
     }
 

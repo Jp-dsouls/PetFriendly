@@ -12,7 +12,6 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,38 +23,38 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.utp.petfriendly.R;
-import com.utp.petfriendly.model.TiendaModel;
+import com.utp.petfriendly.model.CampaniasModel;
 import com.utp.petfriendly.model.VeterinariaModel;
-import com.utp.petfriendly.view.adapter.TiendaAdapter;
+import com.utp.petfriendly.view.adapter.CampaniaAdapter;
 import com.utp.petfriendly.view.adapter.VeterinariaAdapter;
-import com.utp.petfriendly.viewModel.TiendaViewModel;
 import com.utp.petfriendly.viewModel.VeterinariaViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+public class CampaniaFragment extends Fragment implements CampaniaAdapter.OnItemClickListener {
 
-public class VeterinariaFragment extends Fragment implements VeterinariaAdapter.OnItemClickListener {
-
-
-    private VeterinariaAdapter adapter;
-    private List<VeterinariaModel> list;
+    private CampaniaAdapter adapter;
+    private List<CampaniasModel> list;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayout;
     private VeterinariaViewModel viewModel;
     private FragmentManager fragmentManager;
 
+    public CampaniaFragment() {
+        // Required empty public constructor
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-        getArguments();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_veterinaria, container, false);
+        return inflater.inflate(R.layout.fragment_campania, container, false);
     }
 
     @Override
@@ -64,23 +63,22 @@ public class VeterinariaFragment extends Fragment implements VeterinariaAdapter.
         viewModel = new ViewModelProvider(this).get(VeterinariaViewModel.class);
         setToolbar(view);
 
-
-        recyclerView = view.findViewById(R.id.rv_adopcion);
+        recyclerView = view.findViewById(R.id.rv_campania);
         linearLayout = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayout);
         list = new ArrayList<>();
-        adapter = new VeterinariaAdapter(getContext(), this);
+        adapter = new CampaniaAdapter(getContext(), this);
         recyclerView.setAdapter(adapter);
 
-        obtenerVeterinarias();
+        obtenerCampania();
     }
 
-    private void obtenerVeterinarias() {
-        viewModel.obtenerVeterianrias().observe(getActivity(), new Observer<List<VeterinariaModel>>() {
+    private void obtenerCampania() {
+        viewModel.obtenerCampanias().observe(getActivity(), new Observer<List<CampaniasModel>>() {
             @Override
-            public void onChanged(List<VeterinariaModel> veterinariaModels) {
-                if (!veterinariaModels.isEmpty()) {
-                        adapter.setItemProduct(veterinariaModels);
+            public void onChanged(List<CampaniasModel> obj) {
+                if (!obj.isEmpty()) {
+                    adapter.setCampania(obj);
                 }
             }
         });
@@ -101,12 +99,6 @@ public class VeterinariaFragment extends Fragment implements VeterinariaAdapter.
     }
 
     @Override
-    public void onItemClick(VeterinariaModel item) {
-        //  Fragment fragment = new DetalleAdopcionFragment().newInstance(item);
-        // setFragment(fragment);
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -116,33 +108,8 @@ public class VeterinariaFragment extends Fragment implements VeterinariaAdapter.
         return super.onOptionsItemSelected(item);
     }
 
-    public void setFragment(Fragment fragment) {
-        if (null != fragment) {
-            fragmentManager = getActivity().getSupportFragmentManager();
-            boolean existFragment = false;
-            List<Fragment> fragments = fragmentManager.getFragments();
-            if (fragments != null) {
-                for (Fragment mFragment : fragments) {
-                    if (mFragment != null && mFragment.isVisible()) {
-                        if (mFragment.getClass().getName().equals(fragment.getClass().getSimpleName())) {
-                            existFragment = true;
-                        }
-                    }
-                }
-            }
-            if (!existFragment) {
-                fragmentManager
-                        .beginTransaction()
-                        .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
-                        .replace(R.id.content_main, fragment)
-                        .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                        .addToBackStack(null).commit();
-            } else {
-                fragmentManager.beginTransaction().remove(fragment)
-                        .replace(R.id.content_main, fragment)
-                        .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                        .addToBackStack(null).commit();
-            }
-        }
+    @Override
+    public void onItemClick(CampaniasModel item) {
+
     }
 }

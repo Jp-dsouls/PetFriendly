@@ -8,5 +8,5 @@ public class Constante {
         public static final String TABLA_TIENDA = "productos";
         public static final String TABLA_VETERINARIA = "veterinaria";
         public static final String TABLA_USUARIO = "usuario";
-
+        public static final String TABLA_CAMPANIA = "campania";
 }

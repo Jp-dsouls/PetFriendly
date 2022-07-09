@@ -1,5 +1,8 @@
 package com.utp.petfriendly.view.activity;
 
+import static com.utp.petfriendly.util.Constante.TABLA_CAMPANIA;
+import static com.utp.petfriendly.util.Constante.TABLA_VETERINARIA;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
@@ -17,7 +20,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.utp.petfriendly.R;
 import com.utp.petfriendly.model.AdopcionModel;
+import com.utp.petfriendly.model.CampaniasModel;
 import com.utp.petfriendly.model.TiendaModel;
+import com.utp.petfriendly.model.VeterinariaModel;
 import com.utp.petfriendly.util.Constante;
 import com.utp.petfriendly.viewModel.AdopcionViewModel;
 
@@ -46,7 +51,7 @@ public class WelcomeActivity extends AppCompatActivity {
         });
 
         database = FirebaseDatabase.getInstance();
-      // crearAdopcion();
+     // crearAdopcion();
        // obtenerAdopcionFireBase();
         //crearAdopcion();
     }
@@ -76,53 +81,17 @@ public class WelcomeActivity extends AppCompatActivity {
 
     //TEST CREAR DATA EN FIREBASE
     private void crearAdopcion(){
-        DatabaseReference reference = database.getReference("productos");
+        DatabaseReference reference = database.getReference(TABLA_CAMPANIA);
+
 
         UUID uuid1 = UUID.randomUUID();
-        TiendaModel adopcionModel1 = new TiendaModel();
-        adopcionModel1.setNombreProducto("Alimento Cat Chow para Gatos Esterilizados 6 Kg");
-        adopcionModel1.setCantidad("100");
-        adopcionModel1.setPrecio("116.70");
-        adopcionModel1.setCategoria(1);
-        adopcionModel1.setImagen("https://firebasestorage.googleapis.com/v0/b/petfriendly-cf1bf.appspot.com/o/catchow-3.jpg?alt=media&token=b51dc2ac-3ca6-4d4e-8494-597713ca7b95");
-        reference.child(uuid1.toString()).setValue(adopcionModel1);
+        CampaniasModel obj = new CampaniasModel();
+        obj.setDescripcion("Miraflores cuenta con la Primera Brigada de Tenencia Responsable de Mascotas: son brigadistas capacitados que recorren los parques orientando a los vecinos sobre las normas básicas de higiene, a fin de salvaguardar la salud y el bienestar de la comunidad. La brigada se encuentra durante los turnos de mañana y tarde en parques como el Raimondi, John F. Kennedy, Domodossola, Francisco de Zela, Ramón Castilla, Solari, Tradiciones, Melitón Porras y el Faro.");
+        obj.setTitulo("Brigada de Tenencia Responsable de Mascotas");
 
-        UUID uuid2 = UUID.randomUUID();
-        TiendaModel adopcionModel2 = new TiendaModel();
-        adopcionModel2.setNombreProducto("Cama Hipoalergénica Cueva");
-        adopcionModel2.setCantidad("100");
-        adopcionModel2.setPrecio("139.00");
-        adopcionModel2.setCategoria(1);
-        adopcionModel2.setImagen("https://firebasestorage.googleapis.com/v0/b/petfriendly-cf1bf.appspot.com/o/Cueva-1-1-937x937.png?alt=media&token=67699ecb-fd4b-46af-976d-4547dc33e441");
-        reference.child(uuid2.toString()).setValue(adopcionModel2);
+        obj.setImagen("https://www.miraflores.gob.pe/wp-content/uploads/2020/12/BRIGADISTAS-DE-TENENCIA-RESPONSABLE-DE-MASCOTAS-1024x461.jpg");
+        reference.child(uuid1.toString()).setValue(obj);
 
-        UUID uuid3 = UUID.randomUUID();
-
-        TiendaModel adopcionModel3 = new TiendaModel();
-        adopcionModel3.setNombreProducto("Acondicionador pelo grande");
-        adopcionModel3.setCantidad("100");
-        adopcionModel3.setPrecio("36.90");
-        adopcionModel3.setCategoria(2);
-        adopcionModel3.setImagen("https://canicat.pe/wp-content/uploads/2022/03/grooming-41.jpg");
-        reference.child(uuid3.toString()).setValue(adopcionModel3);
-
-        UUID uuid4 = UUID.randomUUID();
-        TiendaModel adopcionModel4 = new TiendaModel();
-        adopcionModel4.setNombreProducto("Shampoo Baño seco en espuma Gatos");
-        adopcionModel4.setCantidad("100");
-        adopcionModel4.setPrecio("29.90");
-        adopcionModel4.setCategoria(3);
-        adopcionModel4.setImagen("https://canicat.pe/wp-content/uploads/2022/03/grooming-30.jpg");
-        reference.child(uuid4.toString()).setValue(adopcionModel4);
-
-        UUID uuid5 = UUID.randomUUID();
-        TiendaModel adopcionModel5 = new TiendaModel();
-        adopcionModel5.setNombreProducto("Bandana Escocés Can");
-        adopcionModel5.setCantidad("100");
-        adopcionModel5.setPrecio("9.90");
-        adopcionModel5.setCategoria(4);
-        adopcionModel5.setImagen("https://canicat.pe/wp-content/uploads/2020/12/ROJO-BANDA-2.png");
-        reference.child(uuid5.toString()).setValue(adopcionModel5);
     }
 
 }

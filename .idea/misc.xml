@@ -7,10 +7,14 @@
         <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/activity_register_user.xml" value="0.2628398791540785" />
         <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/activity_welcome.xml" value="0.16160081053698075" />
         <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/adopcion_row.xml" value="0.262037037037037" />
+        <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/campania_row.xml" value="0.1833839918946302" />
         <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/fragment_adopcion.xml" value="0.19293478260869565" />
+        <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/fragment_campania.xml" value="0.3770833333333333" />
         <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/fragment_home.xml" value="0.24682971014492755" />
-        <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/fragment_tienda.xml" value="0.19293478260869565" />
+        <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/fragment_tienda.xml" value="0.15865384615384615" />
+        <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/fragment_veterinaria.xml" value="0.3770833333333333" />
         <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/tienda_row.xml" value="0.5" />
+        <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Pet Friendly Git/PetFriendly/app/src/main/res/layout/veterinaria_row.xml" value="0.1574074074074074" />
         <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Proyecto Pet friendly/app/src/main/res/layout/activity_adopcion.xml" value="0.33" />
         <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Proyecto Pet friendly/app/src/main/res/layout/activity_home.xml" value="0.4207650273224044" />
         <entry key="..\:/Marin/universidad/Desarrollo de aplicacion movil/Proyecto Pet friendly/app/src/main/res/layout/activity_main.xml" value="0.225" />
@@ -37,20 +41,6 @@
         <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/Aplicacion petshop/PetFriendly/app/src/main/res/layout/fragment_adopcion.xml" value="0.3651041666666667" />
         <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/Aplicacion petshop/PetFriendly/app/src/main/res/layout/fragment_detalle_adopcion.xml" value="0.3651041666666667" />
         <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/Aplicacion petshop/PetFriendly/app/src/main/res/layout/fragment_home.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/font/open_sans.xml" value="0.26979166666666665" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/activity_adopcion.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/activity_home.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/activity_login.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/activity_register_user.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/activity_welcome.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/adopcion_row.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/fragment_adopcion.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/fragment_detalle_adopcion.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/fragment_home.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/fragment_tienda.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/fragment_veterinaria.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/tienda_row.xml" value="0.3651041666666667" />
-        <entry key="..\:/Users/Renzi/OneDrive/Escritorio/Trabajos Renzo/TrabajosU/Desarrollo movil/PetFriendly/app/src/main/res/layout/veterinaria_row.xml" value="0.3651041666666667" />
       </map>
     </option>
   </component>
